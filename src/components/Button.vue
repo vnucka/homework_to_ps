@@ -1,5 +1,5 @@
 <script setup>
-  const { style } = defineProps({
+  defineProps({
     style: {
       type: String,
       default: 'filled',
@@ -43,6 +43,7 @@
 </template>
 <style scoped>
     .button {
+        cursor: pointer;
         text-align: center;
         border: none;
         transition: 0.5s;
