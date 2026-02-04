@@ -36,8 +36,9 @@
 
   const selectCard = (card) => {
     if (event.target.classList.contains('button')) {
-      return;
+      return false;
     }
+    console.log(card)
   }
 </script>
 
