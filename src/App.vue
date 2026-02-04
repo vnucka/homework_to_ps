@@ -33,6 +33,12 @@
       status: 'in-game'
     })
   })
+
+  const selectCard = (card) => {
+    if (event.target.classList.contains('button')) {
+      return;
+    }
+  }
 </script>
 
 <template>
@@ -51,6 +57,7 @@
           :card-text="item.text"
           :card-text-translate="item.translate"
           :card-status="item.status"
+          @click="selectCard(item)"
       />
     </div>
   </div>
