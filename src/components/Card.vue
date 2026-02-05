@@ -10,9 +10,9 @@ defineProps({
   },
   cardStatus: {
     type: String,
-    default: 'in-game',
+    default: 'pending',
     validator: (value) => {
-      return ['in-game', 'error', 'success'].includes(value)
+      return ['pending', 'fail', 'success'].includes(value)
     }
   },
   cardText: {
@@ -51,7 +51,7 @@ const rotate = () => {
             v-if="cardStatus !== 'in-game'"
             class="card-status">
           <IconSuccess v-if="cardStatus === 'success'" />
-          <icon-error v-if="cardStatus === 'error'" />
+          <icon-error v-if="cardStatus === 'fail'" />
         </div>
       </div>
       <div v-if="status === 'shirt'" class="card-body">
@@ -75,6 +75,7 @@ const rotate = () => {
 <style scoped>
   .card {
     max-width: 210px;
+    cursor: pointer;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     background: #FFFFFF;

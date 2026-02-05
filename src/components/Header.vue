@@ -1,11 +1,17 @@
 <script setup>
 import Score from './Score.vue'
+const { gameScore } = defineProps({
+  gameScore: {
+    type: Number,
+    default: 0
+  }
+})
 </script>
 
 <template>
     <header class="page-header">
         <h1>Запомни слово</h1>
-        <Score />
+        <Score :score="gameScore" />
     </header>
 </template>
 
