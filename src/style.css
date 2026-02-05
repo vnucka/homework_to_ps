@@ -14,11 +14,16 @@
   --color-text-secondary: #000000;
 }
 
+p, h1,h2,h3,h4,h5,h6,strong {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   display: grid;
-  place-items: center;
+  padding: 50px 60px;
 }
