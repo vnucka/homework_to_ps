@@ -31,7 +31,8 @@ import {reactive, ref} from 'vue'
       number: (key + 1) < 10 ? '0' + (key + 1) : (key + 1).toString(),
       text: gameItemsData[item].text,
       translate: gameItemsData[item].translate,
-      status: 'pending'
+      status: 'pending',
+      state: 'closed'
     })
   })
 
@@ -41,6 +42,9 @@ import {reactive, ref} from 'vue'
     }
     card.status = 'win'
     gameScore.value++
+  }
+  const toggleCardState = (card) => {
+    card.state = (card.state === 'closed') ? 'opened' : 'closed'
   }
 </script>
 
@@ -60,7 +64,9 @@ import {reactive, ref} from 'vue'
           :card-text="item.text"
           :card-text-translate="item.translate"
           :card-status="item.status"
+          :state="item.state"
           @click="selectCard(item)"
+          @toggle-card-state="toggleCardState(item)"
       />
     </div>
   </div>
