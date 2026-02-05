@@ -12,7 +12,7 @@ defineProps({
     type: String,
     default: 'in-game',
     validator: (value) => {
-      return ['in-game', 'error', 'success'].includes(value);
+      return ['in-game', 'error', 'success'].includes(value)
     }
   },
   cardText: {
