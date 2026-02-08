@@ -1,11 +1,12 @@
 <script setup>
-  import { ref } from 'vue'
+import {reactive, ref} from 'vue'
   import Button from './components/Button.vue'
   import Header from './components/Header.vue'
   import Card from './components/Card.vue'
   import gameItemsData from './gameItems.js'
 
-  let isGameStart = ref(false)
+  const isGameStart = ref(false)
+  const gameScore = ref(0)
   const startGame = () => {
     isGameStart.value = true
   }
@@ -24,27 +25,32 @@
     }
   }
 
-  const gameItems = []
+  const gameItems = reactive([])
   items.forEach((item, key) => {
     gameItems.push({
       number: (key + 1) < 10 ? '0' + (key + 1) : (key + 1).toString(),
       text: gameItemsData[item].text,
       translate: gameItemsData[item].translate,
-      status: 'in-game'
+      status: 'pending',
+      state: 'closed'
     })
   })
 
   const selectCard = (card) => {
     if (event.target.classList.contains('button')) {
-      return false;
+      return false
     }
-    console.log(card)
+    card.status = 'win'
+    gameScore.value++
+  }
+  const toggleCardState = (card) => {
+    card.state = (card.state === 'closed') ? 'opened' : 'closed'
   }
 </script>
 
 <template>
   <div class="main">
-    <Header></Header>
+    <Header :game-score="gameScore"></Header>
     <div v-if="!isGameStart" class="container">
       <Button
           text-size="large"
@@ -58,7 +64,9 @@
           :card-text="item.text"
           :card-text-translate="item.translate"
           :card-status="item.status"
+          :state="item.state"
           @click="selectCard(item)"
+          @toggle-card-state="toggleCardState(item)"
       />
     </div>
   </div>

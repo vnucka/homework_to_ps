@@ -10,9 +10,9 @@ defineProps({
   },
   cardStatus: {
     type: String,
-    default: 'in-game',
+    default: 'pending',
     validator: (value) => {
-      return ['in-game', 'error', 'success'].includes(value)
+      return ['pending', 'fail', 'success'].includes(value)
     }
   },
   cardText: {
@@ -22,16 +22,17 @@ defineProps({
   cardTextTranslate: {
     type: String,
     default: ''
+  },
+  state: {
+    type: String,
+    default: 'closed'
   }
 })
 
-let status = ref('shirt')
-const rotate = () => {
-  if(status.value === 'shirt') {
-    status.value = 'value'
-  } else {
-    status.value = 'shirt'
-  }
+const emit = defineEmits(['toggleCardState'])
+
+const toggleCardState = () => {
+  emit('toggleCardState')
 }
 </script>
 
@@ -40,21 +41,21 @@ const rotate = () => {
       :class="[
           'card',
           {
-            'card-shirt': status === 'shirt',
-            'card-value': status === 'value'
+            'card-closed': state === 'closed',
+            'card-opened': state === 'opened'
           }
       ]">
     <div class="card-container">
       <div class="card-header">
         <div class="card-number"> {{ cardNumber }} </div>
         <div
-            v-if="cardStatus !== 'in-game'"
+            v-if="cardStatus !== 'pending'"
             class="card-status">
           <IconSuccess v-if="cardStatus === 'success'" />
-          <icon-error v-if="cardStatus === 'error'" />
+          <icon-error v-if="cardStatus === 'fail'" />
         </div>
       </div>
-      <div v-if="status === 'shirt'" class="card-body">
+      <div v-if="state === 'closed'" class="card-body">
         {{ cardText }}
       </div>
       <div v-else class="card-body">
@@ -65,7 +66,7 @@ const rotate = () => {
             :style="'transparent'"
             :uppercase="true"
             text-weight="700"
-            @click="rotate"
+            @click="toggleCardState"
         >Перевернуть</Button>
       </div>
     </div>
@@ -75,6 +76,7 @@ const rotate = () => {
 <style scoped>
   .card {
     max-width: 210px;
+    cursor: pointer;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     background: #FFFFFF;
@@ -84,7 +86,7 @@ const rotate = () => {
     &:hover {
       box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1), 10px 10px 10px 0px rgba(0, 0, 0, 0.05);
     }
-    &.card-value {
+    &.card-opened {
       transform: rotateY(180deg);
       .card-container {
         transform: rotateY(180deg);
