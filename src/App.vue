@@ -19,7 +19,7 @@ import {reactive, ref} from 'vue'
 
   const items = []
   while (items.length < 12) {
-    const res = getRandomInt(0, 49)
+    const res = getRandomInt(0, gameItemsData.length - 1)
     if (!items.includes(res)) {
       items.push(res)
     }
@@ -32,19 +32,20 @@ import {reactive, ref} from 'vue'
       text: gameItemsData[item].text,
       translate: gameItemsData[item].translate,
       status: 'pending',
-      state: 'closed'
+      state: 'closed',
+      isCorrect: gameItemsData[item].isCorrect
     })
   })
-
-  const selectCard = (card) => {
-    if (event.target.classList.contains('button')) {
-      return false
-    }
-    card.status = 'win'
-    gameScore.value++
-  }
   const toggleCardState = (card) => {
     card.state = (card.state === 'closed') ? 'opened' : 'closed'
+  }
+  const setAnswer = (item, answer) => {
+    if(item.isCorrect === answer) {
+      item.status = 'success'
+      gameScore.value++
+    } else {
+      item.status = 'fail'
+    }
   }
 </script>
 
@@ -65,8 +66,8 @@ import {reactive, ref} from 'vue'
           :card-text-translate="item.translate"
           :card-status="item.status"
           :state="item.state"
-          @click="selectCard(item)"
           @toggle-card-state="toggleCardState(item)"
+          @answer="setAnswer(item, $event)"
       />
     </div>
   </div>

@@ -1,202 +1,101 @@
 export default [
-  {
-    'text': 'unadmitted',
-    'translate': 'непризнанный'
-  },
-  {
-    'text': 'persistent',
-    'translate': 'настойчивый'
-  },
-  {
-    'text': 'framework',
-    'translate': 'каркас, структура'
-  },
-  {
-    'text': 'eloquent',
-    'translate': 'красноречивый'
-  },
-  {
-    'text': 'diligent',
-    'translate': 'усердный'
-  },
-  {
-    'text': 'ambiguous',
-    'translate': 'двусмысленный'
-  },
-  {
-    'text': 'resilient',
-    'translate': 'живучий, устойчивый'
-  },
-  {
-    'text': 'scrutiny',
-    'translate': 'тщательное изучение'
-  },
-  {
-    'text': 'ubiquitous',
-    'translate': 'вездесущий'
-  },
-  {
-    'text': 'voracious',
-    'translate': 'ненасытный'
-  },
-  {
-    'text': 'conundrum',
-    'translate': 'головоломка, загадка'
-  },
-  {
-    'text': 'ephemeral',
-    'translate': 'мимолетный, недолговечный'
-  },
-  {
-    'text': 'lucid',
-    'translate': 'ясный, понятный'
-  },
-  {
-    'text': 'meticulous',
-    'translate': 'педантичный, дотошный'
-  },
-  {
-    'text': 'novice',
-    'translate': 'новичок'
-  },
-  {
-    'text': 'obsolete',
-    'translate': 'устаревший'
-  },
-  {
-    'text': 'quintessential',
-    'translate': 'самый типичный, квинтэссенция'
-  },
-  {
-    'text': 'redundant',
-    'translate': 'избыточный'
-  },
-  {
-    'text': 'serene',
-    'translate': 'безмятежный'
-  },
-  {
-    'text': 'taciturn',
-    'translate': 'молчаливый'
-  },
-  {
-    'text': 'allocate',
-    'translate': 'выделять, распределять'
-  },
-  {
-    'text': 'benevolent',
-    'translate': 'благожелательный'
-  },
-  {
-    'text': 'candid',
-    'translate': 'откровенный, чистосердечный'
-  },
-  {
-    'text': 'dearth',
-    'translate': 'недостаток, нехватка'
-  },
-  {
-    'text': 'eclectic',
-    'translate': 'эклектичный, разносторонний'
-  },
-  {
-    'text': 'facilitate',
-    'translate': 'облегчать, способствовать'
-  },
-  {
-    'text': 'gregarious',
-    'translate': 'общительный'
-  },
-  {
-    'text': 'hierarchy',
-    'translate': 'иерархия'
-  },
-  {
-    'text': 'integrity',
-    'translate': 'целостность, честность'
-  },
-  {
-    'text': 'juxtaposition',
-    'translate': 'сопоставление'
-  },
-  {
-    'text': 'kinetic',
-    'translate': 'кинетический, подвижный'
-  },
-  {
-    'text': 'languid',
-    'translate': 'расслабленный, вялый'
-  },
-  {
-    'text': 'magnanimous',
-    'translate': 'великодушный'
-  },
-  {
-    'text': 'nostalgia',
-    'translate': 'ностальгия'
-  },
-  {
-    'text': 'opaque',
-    'translate': 'непрозрачный, неясный'
-  },
-  {
-    'text': 'paradigm',
-    'translate': 'модель, образец'
-  },
-  {
-    'text': 'quandary',
-    'translate': 'затруднительное положение'
-  },
-  {
-    'text': 'rhetoric',
-    'translate': 'риторика, красноречие'
-  },
-  {
-    'text': 'sporadic',
-    'translate': 'спорадический, случайный'
-  },
-  {
-    'text': 'trepidation',
-    'translate': 'трепет, беспокойство'
-  },
-  {
-    'text': 'unanimous',
-    'translate': 'единогласный'
-  },
-  {
-    'text': 'vindicate',
-    'translate': 'оправдывать, защищать'
-  },
-  {
-    'text': 'witty',
-    'translate': 'остроумный'
-  },
-  {
-    'text': 'xenophobia',
-    'translate': 'ксенофобия'
-  },
-  {
-    'text': 'yield',
-    'translate': 'уступать, приносить (урожай)'
-  },
-  {
-    'text': 'zealous',
-    'translate': 'усердный, ревностный'
-  },
-  {
-    'text': 'alleviate',
-    'translate': 'ослаблять, смягчать'
-  },
-  {
-    'text': 'bolster',
-    'translate': 'поддерживать, укреплять'
-  },
-  {
-    'text': 'catalyst',
-    'translate': 'катализатор, стимул'
-  },
-  {
-    'text': 'debilitate',
-    'translate': 'ослаблять'
-  }
+  { text: 'unadmitted', translate: 'космический корабль', isCorrect: false },
+  { text: 'persistent', translate: 'настойчивый', isCorrect: true },
+  { text: 'framework', translate: 'банан', isCorrect: false },
+  { text: 'eloquent', translate: 'красноречивый', isCorrect: true },
+  { text: 'diligent', translate: 'ленивый', isCorrect: false },
+  { text: 'ambiguous', translate: 'двусмысленный', isCorrect: true },
+  { text: 'resilient', translate: 'стеклянный', isCorrect: false },
+  { text: 'scrutiny', translate: 'тщательное изучение', isCorrect: true },
+  { text: 'ubiquitous', translate: 'редкий вид животных', isCorrect: false },
+  { text: 'voracious', translate: 'ненасытный', isCorrect: true },
+  { text: 'conundrum', translate: 'пылесос', isCorrect: false },
+  { text: 'ephemeral', translate: 'мимолетный, недолговечный', isCorrect: true },
+  { text: 'lucid', translate: 'грязный', isCorrect: false },
+  { text: 'meticulous', translate: 'педантичный, дотошный', isCorrect: true },
+  { text: 'novice', translate: 'профессионал с опытом', isCorrect: false },
+  { text: 'obsolete', translate: 'устаревший', isCorrect: true },
+  { text: 'quintessential', translate: 'кухонная утварь', isCorrect: false },
+  { text: 'redundant', translate: 'избыточный', isCorrect: true },
+  { text: 'serene', translate: 'шумный и хаотичный', isCorrect: false },
+  { text: 'taciturn', translate: 'молчаливый', isCorrect: true },
+  { text: 'allocate', translate: 'поедать', isCorrect: false },
+  { text: 'benevolent', translate: 'благожелательный', isCorrect: true },
+  { text: 'candid', translate: 'фальшивый и лживый', isCorrect: false },
+  { text: 'dearth', translate: 'недостаток, нехватка', isCorrect: true },
+  { text: 'eclectic', translate: 'одинаковый и скучный', isCorrect: false },
+  { text: 'facilitate', translate: 'облегчать, способствовать', isCorrect: true },
+  { text: 'gregarious', translate: 'одинокий и замкнутый', isCorrect: false },
+  { text: 'hierarchy', translate: 'иерархия', isCorrect: true },
+  { text: 'integrity', translate: 'сломанный механизм', isCorrect: false },
+  { text: 'juxtaposition', translate: 'сопоставление', isCorrect: true },
+  { text: 'kinetic', translate: 'неподвижный', isCorrect: false },
+  { text: 'languid', translate: 'расслабленный, вялый', isCorrect: true },
+  { text: 'magnanimous', translate: 'мстительный', isCorrect: false },
+  { text: 'nostalgia', translate: 'ностальгия', isCorrect: true },
+  { text: 'opaque', translate: 'полностью прозрачный', isCorrect: false },
+  { text: 'paradigm', translate: 'модель, образец', isCorrect: true },
+  { text: 'quandary', translate: 'праздничный салют', isCorrect: false },
+  { text: 'rhetoric', translate: 'риторика, красноречие', isCorrect: true },
+  { text: 'sporadic', translate: 'постоянный и регулярный', isCorrect: false },
+  { text: 'trepidation', translate: 'трепет, беспокойство', isCorrect: true },
+  { text: 'unanimous', translate: 'разделённый во мнениях', isCorrect: false },
+  { text: 'vindicate', translate: 'оправдывать, защищать', isCorrect: true },
+  { text: 'witty', translate: 'глупый', isCorrect: false },
+  { text: 'xenophobia', translate: 'ксенофобия', isCorrect: true },
+  { text: 'yield', translate: 'телепортироваться', isCorrect: false },
+  { text: 'zealous', translate: 'усердный, ревностный', isCorrect: true },
+  { text: 'alleviate', translate: 'усугублять', isCorrect: false },
+  { text: 'bolster', translate: 'поддерживать, укреплять', isCorrect: true },
+  { text: 'catalyst', translate: 'детская игрушка', isCorrect: false },
+  { text: 'debilitate', translate: 'ослаблять', isCorrect: true },
+  { text: 'abrupt', translate: 'резкий, внезапный', isCorrect: true },
+  { text: 'abundant', translate: 'дефицитный товар', isCorrect: false },
+  { text: 'adverse', translate: 'неблагоприятный', isCorrect: true },
+  { text: 'affluent', translate: 'бедный и нуждающийся', isCorrect: false },
+  { text: 'altruistic', translate: 'альтруистичный', isCorrect: true },
+  { text: 'apathetic', translate: 'чрезвычайно заинтересованный', isCorrect: false },
+  { text: 'arduous', translate: 'трудный, изнурительный', isCorrect: true },
+  { text: 'beneath', translate: 'над облаками', isCorrect: false },
+  { text: 'coherent', translate: 'связный, логичный', isCorrect: true },
+  { text: 'concurrent', translate: 'происходящий раз в столетие', isCorrect: false },
+  { text: 'contemplate', translate: 'размышлять, обдумывать', isCorrect: true },
+  { text: 'conventional', translate: 'хаотичный и спонтанный', isCorrect: false },
+  { text: 'credible', translate: 'достоверный, правдоподобный', isCorrect: true },
+  { text: 'cryptic', translate: 'предельно очевидный', isCorrect: false },
+  { text: 'detrimental', translate: 'вредный', isCorrect: true },
+  { text: 'elusive', translate: 'легко достижимый', isCorrect: false },
+  { text: 'eminent', translate: 'выдающийся, известный', isCorrect: true },
+  { text: 'erratic', translate: 'строго упорядоченный', isCorrect: false },
+  { text: 'feasible', translate: 'осуществимый', isCorrect: true },
+  { text: 'frugal', translate: 'расточительный', isCorrect: false },
+  { text: 'hostile', translate: 'враждебный', isCorrect: true },
+  { text: 'imminent', translate: 'произошедший много лет назад', isCorrect: false },
+  { text: 'inhibit', translate: 'сдерживать, препятствовать', isCorrect: true },
+  { text: 'innovative', translate: 'устаревший и архаичный', isCorrect: false },
+  { text: 'intuitive', translate: 'интуитивный', isCorrect: true },
+  { text: 'lenient', translate: 'чрезвычайно строгий', isCorrect: false },
+  { text: 'meager', translate: 'скудный, недостаточный', isCorrect: true },
+  { text: 'mundane', translate: 'магический и сверхъестественный', isCorrect: false },
+  { text: 'notorious', translate: 'печально известный', isCorrect: true },
+  { text: 'obsolete', translate: 'передовая технология', isCorrect: false },
+  { text: 'plausible', translate: 'правдоподобный', isCorrect: true },
+  { text: 'pragmatic', translate: 'оторванный от реальности', isCorrect: false },
+  { text: 'profound', translate: 'глубокий, значительный', isCorrect: true },
+  { text: 'redundant', translate: 'жизненно необходимый', isCorrect: false },
+  { text: 'robust', translate: 'крепкий, устойчивый', isCorrect: true },
+  { text: 'scarce', translate: 'имеющийся в избытке', isCorrect: false },
+  { text: 'subtle', translate: 'тонкий, едва заметный', isCorrect: true },
+  { text: 'superficial', translate: 'глубокий и всесторонний', isCorrect: false },
+  { text: 'tedious', translate: 'утомительный, скучный', isCorrect: true },
+  { text: 'transient', translate: 'вечный и неизменный', isCorrect: false },
+  { text: 'vague', translate: 'расплывчатый, неясный', isCorrect: true },
+  { text: 'versatile', translate: 'годящийся только для одной задачи', isCorrect: false },
+  { text: 'viable', translate: 'жизнеспособный', isCorrect: true },
+  { text: 'whimsical', translate: 'строгий и формальный', isCorrect: false },
+  { text: 'assertive', translate: 'уверенный, напористый', isCorrect: true },
+  { text: 'chaotic', translate: 'строго организованный', isCorrect: false },
+  { text: 'conspicuous', translate: 'заметный, бросающийся в глаза', isCorrect: true },
+  { text: 'docile', translate: 'агрессивный и неуправляемый', isCorrect: false },
+  { text: 'impartial', translate: 'беспристрастный', isCorrect: true }
 ]
