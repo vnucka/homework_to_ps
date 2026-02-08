@@ -1,8 +1,6 @@
 <script setup>
 import Button from './Button.vue'
-import IconSuccess from '../icons/IconSuccess.vue'
-import IconError from '../icons/IconError.vue'
-import {ref} from 'vue'
+import UiIcon from './UiIcon.vue'
 defineProps({
   cardNumber: {
     type: String,
@@ -29,10 +27,14 @@ defineProps({
   }
 })
 
-const emit = defineEmits(['toggleCardState'])
+const emit = defineEmits(['toggleCardState', 'answer'])
 
 const toggleCardState = () => {
   emit('toggleCardState')
+}
+
+const setAnswer = (answer) => {
+  emit('answer', answer)
 }
 </script>
 
@@ -51,8 +53,16 @@ const toggleCardState = () => {
         <div
             v-if="cardStatus !== 'pending'"
             class="card-status">
-          <IconSuccess v-if="cardStatus === 'success'" />
-          <icon-error v-if="cardStatus === 'fail'" />
+          <UiIcon
+              v-if="cardStatus === 'fail'"
+              size="48"
+              name="IconError"
+          ></UiIcon>
+          <UiIcon
+              v-if="cardStatus === 'success'"
+              size="48"
+              name="IconSuccess"
+          ></UiIcon>
         </div>
       </div>
       <div v-if="state === 'closed'" class="card-body">
@@ -61,14 +71,30 @@ const toggleCardState = () => {
       <div v-else class="card-body">
         {{ cardTextTranslate }}
       </div>
-      <div class="card-footer">
+      <div v-if="cardStatus === 'pending'" class="card-footer">
         <Button
+            v-if="state === 'closed'"
             :style="'transparent'"
             :uppercase="true"
             text-weight="700"
             @click="toggleCardState"
         >Перевернуть</Button>
+        <div v-else class="icon-btns">
+          <Button :style="'icon'" @click="setAnswer(false)">
+            <UiIcon
+                size="24"
+                name="IconError"
+            ></UiIcon>
+          </Button>
+          <Button :style="'icon'" @click="setAnswer(true)">
+            <UiIcon
+                size="24"
+                name="IconSuccess"
+            ></UiIcon>
+          </Button>
+        </div>
       </div>
+      <div v-else></div>
     </div>
   </div>
 </template>
@@ -131,5 +157,15 @@ const toggleCardState = () => {
     display: flex;
     justify-content: center;
     transform: translateY(9px);
+    .button,
+    .icon-btns {
+      background: #FFFFFF;
+    }
+    .icon-btns {
+      width: 100px;
+      display: flex;
+      justify-content: space-around;
+      transform: translateY(7px);
+    }
   }
 </style>
